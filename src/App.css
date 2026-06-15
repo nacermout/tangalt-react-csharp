@@ -1,0 +1,176 @@
+.app { min-height: 100vh; }
+
+/* HEADER */
+.header {
+  background: var(--header-bg, #110C08);
+  border-bottom: 2px solid var(--flame);
+  padding: 0 2rem;
+}
+.header-top {
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  align-items: center;
+  padding: 1.2rem 0;
+}
+.header-vol {
+  font-family: 'Fira Sans', sans-serif;
+  font-size: 0.78rem;
+  color: var(--ink-faint);
+  letter-spacing: 0.08em;
+}
+.logo {
+  font-family: 'EB Garamond', serif;
+  font-size: 2.4rem;
+  font-weight: 800;
+  color: #fff;
+  letter-spacing: 0.04em;
+  text-align: center;
+}
+.logo span { color: var(--flame); }
+.header-lang {
+  font-family: 'Fira Sans', sans-serif;
+  font-size: 0.78rem;
+  color: var(--ink-faint);
+  text-align: right;
+  letter-spacing: 0.08em;
+}
+.nav {
+  display: flex;
+  gap: 2rem;
+  padding: 0.8rem 0;
+  border-top: 1px solid var(--border);
+}
+.nav a {
+  font-family: 'Fira Sans', sans-serif;
+  font-size: 0.82rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--ink-dim);
+  text-decoration: none;
+}
+.nav a:hover { color: var(--flame); }
+
+.header-right {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  justify-content: flex-end;
+}
+
+.theme-toggle {
+  background: none;
+  border: 1px solid var(--border);
+  color: var(--ink-dim);
+  padding: 0.3rem 0.7rem;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: border-color 0.2s;
+}
+
+.theme-toggle:hover {
+  border-color: var(--flame);
+}
+
+/* MAIN */
+.main { max-width: 1200px; margin: 0 auto; padding: 2.5rem 2rem; }
+.section-title {
+  font-family: 'Fira Sans', sans-serif;
+  font-size: 0.78rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.18em;
+  color: var(--flame);
+  border-bottom: 1px solid var(--border);
+  padding-bottom: 0.6rem;
+  margin-bottom: 1.5rem;
+}
+
+/* GRID */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1px;
+  background: var(--border);
+}
+@media (max-width: 1024px) {
+  .grid { grid-template-columns: repeat(2, 1fr); }
+}
+@media (max-width: 768px) {
+  .grid { grid-template-columns: 1fr; }
+}
+
+/* CARD */
+.card {
+  background: var(--card);
+  transition: background 0.2s;
+}
+.card:hover { background: var(--surface); }
+.card-image {
+  height: 160px;
+  background: var(--border);
+  width: 100%;
+}
+.card-body { padding: 1.4rem 1.6rem; }
+.badge {
+  font-family: 'Fira Sans', sans-serif;
+  font-size: 0.72rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: #b45309;
+  background: #fef3c7;
+  padding: 0.2rem 0.6rem;
+  display: inline-block;
+  margin-bottom: 0.8rem;
+}
+.card-title {
+  font-family: 'EB Garamond', serif;
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: var(--ink);
+  line-height: 1.3;
+  margin-bottom: 0.6rem;
+}
+.card-excerpt {
+  font-family: 'EB Garamond', serif;
+  font-size: 0.92rem;
+  color: var(--ink-dim);
+  font-style: italic;
+  line-height: 1.5;
+  margin-bottom: 1rem;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+.card-meta {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+}
+.card-author {
+  font-family: 'Fira Sans', sans-serif;
+  font-size: 0.78rem;
+  color: var(--ember);
+  font-weight: 500;
+}
+.card-lang {
+  font-family: 'Fira Sans', sans-serif;
+  font-size: 0.72rem;
+  color: var(--ink-faint);
+}
+
+.btn-retour {
+  font-family: 'Fira Sans', sans-serif;
+  font-size: 0.82rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--ink-dim);
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+}
+.btn-retour:hover { color: var(--flame); }
