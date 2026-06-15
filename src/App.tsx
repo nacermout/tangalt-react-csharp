@@ -2,6 +2,8 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import { useState } from 'react'
 import HomePage from './pages/HomePage'
 import ArticlePage from './pages/ArticlePage'
+import LoginPage from './pages/LoginPage'
+import AdminPage from './pages/AdminPage'
 import './App.css'
 
 function App() {
@@ -37,9 +39,11 @@ function App() {
         </header>
 
         <Routes>
-          <Route path="/" element={<HomePage />} />
-          <Route path="/articles/:id" element={<ArticlePage />} />
-        </Routes>
+  <Route path="/" element={<HomePage />} />
+  <Route path="/articles/:id" element={<ArticlePage />} />
+  <Route path="/login" element={<LoginPage />} />
+  <Route path="/admin" element={<AdminPage />} />
+</Routes>
       </div>
     </BrowserRouter>
   )
