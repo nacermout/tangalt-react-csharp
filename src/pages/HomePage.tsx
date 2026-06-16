@@ -62,7 +62,7 @@ export default function HomePage() {
   const [loading, setLoading] = useState(true)
 
   useEffect(() => {
-    fetch('http://localhost:5025/api/articles')
+    fetch('https://tangalt-dotnet-rebuild-production.up.railway.app/api/articles')
       .then(res => res.json())
       .then(data => {
         setArticles(data)

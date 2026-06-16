@@ -20,13 +20,13 @@ export default function AdminPage() {
 
   useEffect(() => {
     if (!token) { navigate('/login'); return }
-    fetch('http://localhost:5025/api/articles')
+    fetch('https://tangalt-dotnet-rebuild-production.up.railway.app/api/articles')
       .then(res => res.json())
       .then(data => setArticles(data))
   }, [])
 
   const handleCreate = async () => {
-    const res = await fetch('http://localhost:5025/api/articles', {
+    const res = await fetch('https://tangalt-dotnet-rebuild-production.up.railway.app/api/articles', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
@@ -55,7 +55,7 @@ export default function AdminPage() {
   }
 
   const handleDelete = async (id: number) => {
-    await fetch(`http://localhost:5025/api/articles/${id}`, {
+    await fetch(`https://tangalt-dotnet-rebuild-production.up.railway.app/api/articles/${id}`, {
       method: 'DELETE',
       headers: { 'Authorization': `Bearer ${token}` }
     })

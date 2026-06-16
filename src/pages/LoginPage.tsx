@@ -8,7 +8,7 @@ export default function LoginPage() {
   const navigate = useNavigate()
 
   const handleLogin = async () => {
-    const res = await fetch('http://localhost:5025/api/auth/login', {
+    const res = await fetch('https://tangalt-dotnet-rebuild-production.up.railway.app/api/auth/login', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ email, password })

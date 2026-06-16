@@ -18,7 +18,7 @@ export default function ArticlePage() {
   const [loading, setLoading] = useState(true)
 
   useEffect(() => {
-    fetch(`http://localhost:5025/api/articles/${id}`)
+    fetch(`https://tangalt-dotnet-rebuild-production.up.railway.app/api/articles/${id}`)
       .then(res => res.json())
       .then(data => {
         setArticle(data)
