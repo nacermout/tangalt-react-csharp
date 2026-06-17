@@ -243,3 +243,42 @@
   margin-bottom: 1rem;
   text-align: center;
 }
+
+/* TipTap Editor */
+.rich-editor {
+  border: 1px solid var(--border);
+  background: var(--card);
+}
+
+.rich-editor .toolbar {
+  display: flex;
+  gap: 0.4rem;
+  padding: 0.5rem 0.7rem;
+  border-bottom: 1px solid var(--border);
+}
+
+.rich-editor .toolbar button {
+  background: none;
+  border: 1px solid var(--border);
+  color: var(--ink);
+  padding: 0.2rem 0.6rem;
+  cursor: pointer;
+  font-family: 'Fira Sans', sans-serif;
+  font-size: 0.82rem;
+}
+
+.rich-editor .toolbar button.active {
+  background: var(--flame);
+  color: #fff;
+  border-color: var(--flame);
+}
+
+.rich-editor .ProseMirror {
+  padding: 0.8rem 1rem;
+  min-height: 150px;
+  outline: none;
+  color: var(--ink);
+  font-family: 'EB Garamond', serif;
+  font-size: 1rem;
+  line-height: 1.7;
+}

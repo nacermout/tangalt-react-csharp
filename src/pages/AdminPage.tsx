@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react'
 import { useNavigate } from 'react-router-dom'
+import RichEditor from '../components/RichEditor'
 
 interface Article {
   id: number
@@ -104,14 +105,9 @@ export default function AdminPage() {
                 color: 'var(--ink)', padding: '0.7rem 1rem',
                 fontFamily: 'EB Garamond', fontSize: '1rem' }}
             />
-            <textarea
-              placeholder="Contenu"
-              value={newContent}
-              onChange={e => setNewContent(e.target.value)}
-              rows={5}
-              style={{ background: 'var(--card)', border: '1px solid var(--border)',
-                color: 'var(--ink)', padding: '0.7rem 1rem',
-                fontFamily: 'EB Garamond', fontSize: '1rem', resize: 'vertical' }}
+            <RichEditor
+              content={newContent}
+              onChange={(html) => setNewContent(html)}
             />
             <input
               placeholder="Slug (ex: mon-article)"
