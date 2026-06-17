@@ -252,6 +252,8 @@
 
 .rich-editor .toolbar {
   display: flex;
+  flex-wrap: wrap;
+  align-items: center;
   gap: 0.4rem;
   padding: 0.5rem 0.7rem;
   border-bottom: 1px solid var(--border);
@@ -260,11 +262,19 @@
 .rich-editor .toolbar button {
   background: none;
   border: 1px solid var(--border);
+  border-radius: 4px;
   color: var(--ink);
-  padding: 0.2rem 0.6rem;
+  padding: 0.3rem 0.6rem;
   cursor: pointer;
   font-family: 'Fira Sans', sans-serif;
   font-size: 0.82rem;
+  white-space: nowrap;
+  transition: all 0.2s ease;
+}
+
+.rich-editor .toolbar button:hover {
+  background: var(--surface);
+  border-color: var(--ink-dim);
 }
 
 .rich-editor .toolbar button.active {
@@ -281,4 +291,103 @@
   font-family: 'EB Garamond', serif;
   font-size: 1rem;
   line-height: 1.7;
+}
+
+.rich-editor .toolbar .sep {
+  color: var(--border);
+  padding: 0 0.3rem;
+  user-select: none;
+}
+
+/* Nouvelles fonctionnalités Tiptap */
+.rich-editor .editor-footer {
+  padding: 0.5rem 0.7rem;
+  border-top: 1px solid var(--border);
+  font-family: 'Fira Sans', sans-serif;
+  font-size: 0.72rem;
+  color: var(--ink-faint);
+  text-align: right;
+  letter-spacing: 0.05em;
+  background: var(--surface);
+}
+
+.rich-editor .ProseMirror img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+  margin: 1rem auto;
+  border-radius: 4px;
+}
+
+.rich-editor .ProseMirror iframe {
+  max-width: 100%;
+  aspect-ratio: 16/9;
+  width: 100%;
+  border-radius: 4px;
+  border: none;
+  margin: 1rem 0;
+}
+
+.rich-editor .ProseMirror table {
+  border-collapse: collapse;
+  table-layout: fixed;
+  width: 100%;
+  margin: 1rem 0;
+  overflow: hidden;
+}
+
+.rich-editor .ProseMirror table td,
+.rich-editor .ProseMirror table th {
+  min-width: 1em;
+  border: 1px solid var(--border);
+  padding: 0.4rem 0.6rem;
+  vertical-align: top;
+  box-sizing: border-box;
+  position: relative;
+}
+
+.rich-editor .ProseMirror table th {
+  background-color: var(--surface);
+  font-family: 'Fira Sans', sans-serif;
+  font-size: 0.85rem;
+  font-weight: 600;
+  text-align: left;
+}
+
+.rich-editor .ProseMirror ul[data-type="taskList"] {
+  list-style: none;
+  padding: 0;
+}
+
+.rich-editor .ProseMirror ul[data-type="taskList"] li {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.5rem;
+  margin-bottom: 0.3rem;
+}
+
+.rich-editor .ProseMirror ul[data-type="taskList"] li > label {
+  flex: 0 0 auto;
+  margin-top: 0.2rem;
+  user-select: none;
+}
+
+.rich-editor .ProseMirror ul[data-type="taskList"] li > div {
+  flex: 1 1 auto;
+}
+
+/* Placeholder */
+.rich-editor .ProseMirror p.is-editor-empty:first-child::before {
+  color: var(--ink-faint);
+  content: attr(data-placeholder);
+  float: left;
+  height: 0;
+  pointer-events: none;
+  font-style: italic;
+}
+
+.rich-editor .ProseMirror mark {
+  background-color: #fef3c7; /* A subtle yellow/orange matching the theme */
+  border-radius: 2px;
+  padding: 0 0.2rem;
 }
