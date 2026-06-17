@@ -1,73 +1,77 @@
-# React + TypeScript + Vite
+# Tangalt UI — React 18 + TypeScript
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+![React](https://img.shields.io/badge/React-18-61DAFB?logo=react)
+![TypeScript](https://img.shields.io/badge/TypeScript-5-3178C6?logo=typescript)
+![Vercel](https://img.shields.io/badge/Vercel-deployed-000000?logo=vercel)
 
-Currently, two official plugins are available:
+Frontend React/TypeScript pour Tangalt — magazine littéraire bilingue (FR / Tamazight).
+Consomme l'API ASP.NET Core. Déployé sur Vercel.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+## 🌐 Démo live
 
-## React Compiler
+- **Site** : https://tangalt-react-csharp.vercel.app
+- **API Backend** : https://tangalt-dotnet-rebuild-production.up.railway.app
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## 🛠 Stack
 
-## Expanding the ESLint configuration
+| Couche        | Technologie              |
+|---------------|--------------------------|
+| Framework     | React 18                 |
+| Langage       | TypeScript 5             |
+| Build tool    | Vite                     |
+| Styles        | Tailwind CSS             |
+| HTTP          | Axios                    |
+| Routing       | React Router v6          |
+| Déploiement   | Vercel                   |
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+## 📁 Structure
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
-
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+```
+src/
+├── components/
+│   ├── Header.tsx       # Navigation + toggle FR/TIZ + dark mode
+│   ├── ArticleCard.tsx  # Carte article (titre, extrait, auteur)
+│   └── ArticleDetail.tsx# Page article complète
+├── pages/
+│   ├── Home.tsx         # Listing articles
+│   ├── Admin.tsx        # Dashboard CRUD (protégé JWT)
+│   └── Login.tsx        # Authentification
+├── services/
+│   └── api.ts           # Instance Axios + appels API
+├── types/
+│   └── index.ts         # Interfaces TypeScript (Article, Author...)
+└── App.tsx              # Routes + contexte auth
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+## ✨ Fonctionnalités
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+- **Listing articles** avec badges par catégorie
+- **Toggle FR / Tamazight** — bascule la langue d'affichage
+- **Dark / Light mode** — persisté en localStorage
+- **Admin CRUD** — créer, modifier, supprimer des articles
+- **Auth JWT** — login, token stocké, routes protégées
+- **Responsive** — mobile first, Tailwind CSS
+- **Bilingue** — contenu FR + Tamazight (transcription latine)
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+## 🚀 Lancer en local
+
+```bash
+# Prérequis : Node.js 18+
+git clone https://github.com/nacermout/tangalt-react-csharp.git
+cd tangalt-react-csharp
+
+npm install
+
+# Créer .env.local
+echo "VITE_API_URL=http://localhost:8080" > .env.local
+
+npm run dev
+# App sur http://localhost:5173
 ```
+
+## 🔗 Repos liés
+
+- Backend API : [tangalt-dotnet-rebuild](https://github.com/nacermout/tangalt-dotnet-rebuild)
+
+---
+Nacer M. · 2026 · nacermout/tangalt-react-csharp
